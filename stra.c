@@ -22,7 +22,9 @@ char *Str_copy(char s1[], const char s2[]) {
     size_t index = 0;
     while (s2[index]!='\0') {
         s1[index] = s2[index];
+        index++;
     }
+    /* s1[index] = s2[index]; */
     return s1;
 }
 
@@ -39,6 +41,7 @@ char *Str_concat(char s1[], const char s2[]) {
     while (s2[index]!='\0') {
         /* can use size_t as index? */
         s1[length1+index] = s2[index];
+        index++;
     }
     return s1;
 }
@@ -58,6 +61,7 @@ int Str_compare(const char s1[], const char s2[]) {
         else {
             return s1[index] - s2[index];
         }
+        index++;
     }
 
     /* since the char \0 has a value of 0, the statement below will
