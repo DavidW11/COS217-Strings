@@ -24,7 +24,7 @@ char *Str_copy(char s1[], const char s2[]) {
         s1[index] = s2[index];
         index++;
     }
-    /* s1[index] = s2[index]; */
+    s1[index] = s2[index];
     return s1;
 }
 
