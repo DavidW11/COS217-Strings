@@ -1,5 +1,6 @@
 #ifndef STR_H
 #define STR_H
+#include <stddef.h>
 
 /* returns length of string s, not including the null character. */
 size_t Str_getLength(const char *s);

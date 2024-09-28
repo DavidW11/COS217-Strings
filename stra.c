@@ -1,5 +1,6 @@
 # include "str.h"
 # include <stddef.h>
+# include <assert.h>
 
 # include <string.h>
 
