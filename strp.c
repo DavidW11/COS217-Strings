@@ -75,6 +75,7 @@ int Str_compare(const char *s1, const char *s2) {
 returns pointer to start of substring if it exists and NULL otherwise */
 char *Str_search(const char *s1, const char *s2) {
     const char *startSubstring = s1;
+    const char *currentChar = s2;
 
     assert(s1!=NULL && s2!=NULL);
     if (*s2=='\0') {
@@ -83,14 +84,14 @@ char *Str_search(const char *s1, const char *s2) {
 
     while (*startSubstring != '\0') {
         s1 = startSubstring;
-        s2 = s2;
+        currentChar = s2;
 
-        while (*s1!='\0' && *s2!='\0' && 
-               *s1 == *s2) {
+        while (*s1!='\0' && *currentChar!='\0' && 
+               *s1 == *currentChar) {
             s1++;
-            s2++;
+            currentChar++;
         }
-        if (*s2=='\0') {
+        if (*currentChar=='\0') {
             return (char *) startSubstring;
         }
         if (*s1=='\0') {
