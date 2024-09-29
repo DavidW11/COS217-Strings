@@ -2,7 +2,8 @@
 #define STR_H
 #include <stddef.h>
 
-/* returns length of string s, not including the null character. */
+/* returns length of string pointed to by s, 
+not including the null character. */
 size_t Str_getLength(const char *s);
 
 /* copies string pointed to by s2 to pointer s1.

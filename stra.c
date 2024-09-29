@@ -1,3 +1,5 @@
+/* array indexed implementation of string library in C */
+
 # include "str.h"
 # include <stddef.h>
 # include <assert.h>
@@ -5,12 +7,13 @@
 
 # include <string.h>
 
-/* returns length of string s, not including the null character. */
-size_t Str_getLength(const char pcSrc[]) {
+/* returns length of string pointed to by s, 
+not including the null character. */
+size_t Str_getLength(const char s[]) {
     size_t length = 0;
 
-    assert(pcSrc!=NULL);
-    while (pcSrc[length] != '\0') {
+    assert(s!=NULL);
+    while (s[length] != '\0') {
         length++;
     }
     return length;
