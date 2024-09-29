@@ -9,8 +9,6 @@ author: David Wang
 # include <assert.h>
 # include <stdio.h>
 
-# include <string.h>
-
 /* returns length of string pointed to by s, 
 not including the null character. */
 size_t Str_getLength(const char s[]) {
@@ -27,7 +25,6 @@ size_t Str_getLength(const char s[]) {
 returns s1 (pointer of the copy). */
 char *Str_copy(char s1[], const char s2[]) {
     size_t index = 0;
-    /* no way to know if s2 can fit in s1 */
     assert(s1!=NULL && s2!=NULL);
     while (s2[index]!='\0') {
         s1[index] = s2[index];
@@ -44,12 +41,10 @@ returns s1 (pointer to final string). */
 char *Str_concat(char s1[], const char s2[]) {
     size_t index = 0;
     size_t length1;
-    /* no way to know if s2 can fit in s1 */
     assert(s1!=NULL && s2!=NULL);
     length1 = Str_getLength(s1);
     
     while (s2[index]!='\0') {
-        /* can use size_t as index? */
         s1[length1+index] = s2[index];
         index++;
     }

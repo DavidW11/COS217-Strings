@@ -9,8 +9,6 @@ David Wang
 # include <assert.h>
 # include <stdio.h>
 
-# include <string.h>
-
 /* returns length of string pointed to by s,
 not including the null character. */
 size_t Str_getLength(const char *s) {
