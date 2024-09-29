@@ -76,6 +76,10 @@ int Str_compare(const char s1[], const char s2[]) {
 returns pointer to start of substring if it exists and NULL otherwise */
 char *Str_search(const char s1[], const char s2[]) {
     assert(s1!=NULL && s2!=NULL);
+    if (s2[0]=='\0') {
+        return (char *) s1;
+    }
+
     size_t startIndex = 0;
     size_t index1 = 0;
     size_t index2 = 0;
@@ -108,14 +112,14 @@ char *Str_search(const char s1[], const char s2[]) {
 
 /*
 int main() {
-    int iResult1;
-    int iResult2;
+    char *pcResult1;
+    char *pcResult2;
 
-    printf("testing");
-
-    const char acSrc1[] = {'V', 'u', 't', 'h', '\0'};
-    const char acSrc2[] = {'R', 'u', 't', 'h', '\0'};
-    iResult1 = Str_compare(acSrc1, acSrc2);
-    printf("%i", iResult1);
+    const char acHaystack[] = "";
+    const char acNeedle[] = "";
+    pcResult1 = Str_search(acHaystack, acNeedle);
+    pcResult2 = strstr(acHaystack, acNeedle);
+    printf("%c", *pcResult1);
+    printf("%c", *pcResult2);
 }
 */
