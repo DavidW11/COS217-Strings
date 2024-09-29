@@ -106,7 +106,7 @@ char *Str_search(const char s1[], const char s2[]) {
     return NULL;
 }
 
-
+/*
 int main() {
     int iResult1;
     int iResult2;
@@ -117,9 +117,5 @@ int main() {
     const char acSrc2[] = {'R', 'u', 't', 'h', '\0'};
     iResult1 = Str_compare(acSrc1, acSrc2);
     printf("%i", iResult1);
-    
-    /* iResult1 = Str_compare(acSrc1, acSrc2); */
-    
-
-    /* assert(sign(iResult1) == sign(iResult2)); */
 }
+*/
