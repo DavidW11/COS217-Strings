@@ -59,7 +59,7 @@ int Str_compare(const char s1[], const char s2[]) {
     assert(s1!=NULL && s2!=NULL);
     while(s1[index]!='\0' && s2[index]!='\0') {
         if (s1[index]!=s2[index]) {
-            return s1[index] - s2[index];
+            return (int) (s1[index] - s2[index]);
         }
         index++;
     }
@@ -70,7 +70,7 @@ int Str_compare(const char s1[], const char s2[]) {
     and 0 if they both reached the end of their string (equal length).
     the program will only reach this point if all characters so far
     are equal. */
-    return s1[index] - s2[index];
+    return (int) (s1[index] - s2[index]);
 }
 
 /* searches string pointed to by s1 for string pointed to by s2, 
@@ -79,7 +79,7 @@ char *Str_search(const char s1[], const char s2[]) {
     size_t startIndex = 0;
     size_t index1 = 0;
     size_t index2 = 0;
-    
+
     assert(s1!=NULL && s2!=NULL);
     if (s2[0]=='\0') {
         return (char *) s1;
