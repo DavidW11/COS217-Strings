@@ -7,8 +7,9 @@
 
 /* returns length of string s, not including the null character. */
 size_t Str_getLength(const char pcSrc[]) {
-    assert(pcSrc!=NULL);
     size_t length = 0;
+
+    assert(pcSrc!=NULL);
     while (pcSrc[length] != '\0') {
         length++;
     }
@@ -18,9 +19,9 @@ size_t Str_getLength(const char pcSrc[]) {
 /* copies string pointed to by s2 to pointer s1.
 returns s1 (pointer of the copy). */
 char *Str_copy(char s1[], const char s2[]) {
+    size_t index = 0;
     /* no way to know if s2 can fit in s1 */
     assert(s1!=NULL && s2!=NULL);
-    size_t index = 0;
     while (s2[index]!='\0') {
         s1[index] = s2[index];
         index++;
@@ -34,11 +35,12 @@ char *Str_copy(char s1[], const char s2[]) {
 the string pointed to by s1. 
 returns s1 (pointer to final string). */
 char *Str_concat(char s1[], const char s2[]) {
+    size_t index = 0;
+    size_t length1;
     /* no way to know if s2 can fit in s1 */
     assert(s1!=NULL && s2!=NULL);
-    size_t length1 = Str_getLength(s1);
-
-    size_t index = 0;
+    length1 = Str_getLength(s1);
+    
     while (s2[index]!='\0') {
         /* can use size_t as index? */
         s1[length1+index] = s2[index];
@@ -52,10 +54,9 @@ char *Str_concat(char s1[], const char s2[]) {
 depending if string pointed to by s1 is less than, equal to, or 
 greater than string pointed to by s2. */
 int Str_compare(const char s1[], const char s2[]) {
-    assert(s1!=NULL && s2!=NULL);
-
     size_t index = 0;
 
+    assert(s1!=NULL && s2!=NULL);
     while(s1[index]!='\0' && s2[index]!='\0') {
         if (s1[index]!=s2[index]) {
             return s1[index] - s2[index];
@@ -75,14 +76,14 @@ int Str_compare(const char s1[], const char s2[]) {
 /* searches string pointed to by s1 for string pointed to by s2, 
 returns pointer to start of substring if it exists and NULL otherwise */
 char *Str_search(const char s1[], const char s2[]) {
+    size_t startIndex = 0;
+    size_t index1 = 0;
+    size_t index2 = 0;
+    
     assert(s1!=NULL && s2!=NULL);
     if (s2[0]=='\0') {
         return (char *) s1;
     }
-
-    size_t startIndex = 0;
-    size_t index1 = 0;
-    size_t index2 = 0;
 
     while (s1[startIndex]!='\0') {
 
