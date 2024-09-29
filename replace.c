@@ -21,7 +21,7 @@ static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
    const int length = Str_getLength(pcFrom);
-   char nextInstance = Str_search(pcLine, pcFrom);
+   char *nextInstance = Str_search(pcLine, pcFrom);
    int numReplacements = 0;
    
    /* technically already checked by running the functions above */
