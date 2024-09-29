@@ -4,10 +4,10 @@ array indexed implementation of string library in C
 author: David Wang
 */
 
-# include "str.h"
-# include <stddef.h>
-# include <assert.h>
-# include <stdio.h>
+#include "str.h"
+#include <stddef.h>
+#include <assert.h>
+#include <stdio.h>
 
 /* returns length of string pointed to by s, 
 not including the null character. */
