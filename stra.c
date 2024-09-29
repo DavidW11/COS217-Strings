@@ -1,4 +1,8 @@
-/* array indexed implementation of string library in C */
+/* 
+stra.c
+array indexed implementation of string library in C 
+author: David Wang
+*/
 
 # include "str.h"
 # include <stddef.h>

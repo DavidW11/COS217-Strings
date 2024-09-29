@@ -1,4 +1,8 @@
-/* pointer incremented implementation of string library in C */
+/* 
+strp.c
+pointer incremented implementation of string library in C 
+David Wang
+*/
 
 # include "str.h"
 # include <stddef.h>

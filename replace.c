@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------*/
 /* replace.c                                                          */
-/* Author: David Wang                                                        */
+/* Author: David Wang                                                 */
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
@@ -20,9 +20,9 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   const int length = Str_getLength(pcFrom);
+   const size_t length = Str_getLength(pcFrom);
    char *nextInstance = Str_search(pcLine, pcFrom);
-   int numReplacements = 0;
+   size_t numReplacements = 0;
    
    /* technically already checked by running the functions above */
    assert(pcLine!=NULL && pcFrom!=NULL && pcTo!=NULL);
