@@ -23,14 +23,14 @@ size_t Str_getLength(const char *s) {
 /* copies string pointed to by s2 to pointer s1.
 returns s1 (pointer of the copy). */
 char *Str_copy(char *s1, const char *s2) {
-    const char *currentChar = s2;
+    char *end = s1;
     assert(s1!=NULL && s2!=NULL);
-    while (*currentChar != '\0') {
-        *s1 = *currentChar;
-        s1++;
-        currentChar++;
+    while (*s2 != '\0') {
+        *end = *s2;
+        end++;
+        s2++;
     }
-    *s1 = *currentChar;
+    *end = *s2;
     return s1;
 }
 
