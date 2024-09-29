@@ -1,6 +1,7 @@
 # include "str.h"
 # include <stddef.h>
 # include <assert.h>
+# include <stdio.h>
 
 # include <string.h>
 
@@ -56,10 +57,7 @@ int Str_compare(const char s1[], const char s2[]) {
     size_t index = 0;
 
     while(s1[index]!='\0' && s2[index]!='\0') {
-        if (s1[index]==s2[index]) {
-            continue;
-        }
-        else {
+        if (s1[index]!=s2[index]) {
             return s1[index] - s2[index];
         }
         index++;
@@ -95,7 +93,7 @@ char *Str_search(const char s1[], const char s2[]) {
         if(s2[index2]=='\0') {
             /* if we have completed the search for the substring, 
             return pointer to start of the substring */
-            return &s1[startIndex];
+            return (char *) &s1[startIndex];
         }
         if(s1[index1]=='\0') {
             /* if reach the end of s1 before s2, no substring exists */
@@ -106,4 +104,22 @@ char *Str_search(const char s1[], const char s2[]) {
         startIndex++;
     }
     return NULL;
+}
+
+
+int main() {
+    int iResult1;
+    int iResult2;
+
+    printf("testing");
+
+    const char acSrc1[] = {'V', 'u', 't', 'h', '\0'};
+    const char acSrc2[] = {'R', 'u', 't', 'h', '\0'};
+    iResult1 = Str_compare(acSrc1, acSrc2);
+    printf("%i", iResult1);
+    
+    /* iResult1 = Str_compare(acSrc1, acSrc2); */
+    
+
+    /* assert(sign(iResult1) == sign(iResult2)); */
 }
