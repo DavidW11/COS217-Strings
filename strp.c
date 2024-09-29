@@ -59,45 +59,41 @@ char *Str_concat(char *s1, const char *s2) {
 depending if string pointed to by s1 is less than, equal to, or 
 greater than string pointed to by s2. */
 int Str_compare(const char *s1, const char *s2) {
-    const char *c1 = s1;
-    const char *c2 = s2;
 
     assert(s1!=NULL && s2!=NULL);
-    while (*c1 != '\0' && *c2 != '\0') {
-        if (*c1 != *c2) {
-            return (int) (*c1 - *c2);
+    while (*s1 != '\0' && *s2 != '\0') {
+        if (*s1 != *s2) {
+            return (int) (*s1 - *s2);
         }
-        c1++;
-        c2++;
+        s1++;
+        s2++;
     }
-    return (int) (*c1 - *c2);
+    return (int) (*s1 - *s2);
 }
 
 /* searches string pointed to by s1 for string pointed to by s2, 
 returns pointer to start of substring if it exists and NULL otherwise */
 char *Str_search(const char *s1, const char *s2) {
     const char *startSubstring = s1;
-    const char *c1 = s1;
-    const char *c2 = s2;
 
     assert(s1!=NULL && s2!=NULL);
-    if (*c2=='\0') {
-        return c1;
+    if (*s2=='\0') {
+        return (char *) s1;
     }
 
     while (*startSubstring != '\0') {
-        c1 = startSubstring;
-        c2 = s2;
+        s1 = startSubstring;
+        s2 = s2;
 
-        while (*c1!='\0' && *c2!='\0' && 
-               *c1 == *c2) {
-            c1++;
-            c2++;
+        while (*s1!='\0' && *s2!='\0' && 
+               *s1 == *s2) {
+            s1++;
+            s2++;
         }
-        if (*c2=='\0') {
-            return startSubstring;
+        if (*s2=='\0') {
+            return (char *) startSubstring;
         }
-        if (*c1=='\0') {
+        if (*s1=='\0') {
             return NULL;
         }
         startSubstring++;
